@@ -1,0 +1,53 @@
+
+
+<div class="jumbotron container">
+    <img src="../assets/img/burger.png" id = 'jbtImg' class="img-thumbnail rounded mx-auto d-block" alt="jumbotron Image">
+    <p class="display-3 text-center text-uppercase jbtText">Eat-Da-Burger!</p>
+    <hr class="my-4">
+
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-10">
+        <form class="form-inline text-center">
+          <div class="form-group mx-sm-3 mb-2">
+            <label for="inputName" class="form-control-plaintext formtext form-control-lg" id= 'labletext'>Enter Burger Name and Submit</label>
+            <input type="text" class="form-control form-control-lg formtext" id="inputName" placeholder="Cheese Burger">
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg mb-2 formtext" id='submitBtn'>Submit</button>
+        </form>
+      </div>
+    </div>
+
+</div>
+
+<div class="row">
+  <div class="col-md-3 offset-md-3">
+    <div class="row rowTextHeader1">
+      <p class ='text-center  text-uppercase'>
+        Burgers to Eat!
+      </p>
+    </div>
+    <div class="row">
+      {{#each burgers}}
+          {{#unless devoured}}
+            {{> burgers/burger-block notDevoured = true}}
+          {{/unless}}
+      {{/each}}
+    </div>
+  </div>
+  <div class="col-md-3 offset-md-1">
+    <div class="row rowTextHeader2">
+      <p class ='text-center  text-uppercase'>
+        Burgers Devoured!
+      </p>
+    </div>
+    <div class="row">
+      {{#each burgers}}
+          {{#if devoured}}
+              {{> burgers/burger-block notDevoured = false}}
+          {{/if}}
+      {{/each}}
+    </div>
+  </div>
+</div>
+

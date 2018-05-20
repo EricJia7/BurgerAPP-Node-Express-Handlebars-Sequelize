@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "root",
+    "password": "3027388Abc",
+    "database": "burgers_db_seq",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": "3027388Abc",
+    "database": "burgers_db_seq",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": "3027388Abc",
+    "database": "burgers_db_seq",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
