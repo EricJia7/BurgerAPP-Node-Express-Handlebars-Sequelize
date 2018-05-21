@@ -3,7 +3,7 @@ require('dotenv').config();
 const mysql_password = require('../keys.js')
 
 const Sequelize = require('sequelize');
-const sequelize = new Sequelize('burgers_db','root', mysql_password, {
+const sequelize = new Sequelize('burgers_db_seq','root', mysql_password, {
     host: 'localhost',
     dialect: 'mysql',
     operatorsAliases: false,
@@ -30,16 +30,4 @@ function logOut() {
     sequelize.close();
 };
 
-const Burgers = sequelize.define('burgers', {
-    id : {
-        type: Sequelize.INTEGER,
-        primaryKey:true,
-    },
-    burger_name: Sequelize.STRING,
-    devoured: Sequelize.BOOLEAN,
-    date: Sequelize.DATE
-}, {
-    timestamps:false,
-});
-
-module.exports = Burgers;
+module.exports = sequelize;

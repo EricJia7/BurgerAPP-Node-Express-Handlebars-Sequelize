@@ -1,4 +1,4 @@
-USE burgers_db;
+USE burgers_db_seq;
 
 INSERT INTO burgers (burger_name) VALUES 
 ('New York Burger'), 

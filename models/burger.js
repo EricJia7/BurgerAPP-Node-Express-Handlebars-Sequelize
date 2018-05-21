@@ -22,23 +22,28 @@
 
 // module.exports = burger;
 
+
 module.exports = (sequelize, DataTypes) => {
     const Burger = sequelize.define('Burger', {
         id: {
-            type: Sequelize.INTEGER,
+            type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,
         },
         burger_name: {
-            type:Sequelize.STRING,
+            type:DataTypes.STRING,
             allowNull: false,
         },
         devoured: {
-            type: Sequelize.BOOLEAN,
+            type: DataTypes.BOOLEAN,
             defaultValue: false,
         },
-        createdAt: Sequelize.DATE,
-        updatedAt: Sequelize.DATE,
+        date: {
+            type:DataTypes.DATE,
+            defaultValue: DataTypes.NOW
+        }
+    }, {
+        timestamps: false,
     });
 
     return Burger;
